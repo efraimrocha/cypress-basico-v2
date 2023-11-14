@@ -14,5 +14,7 @@ describe('Central de atendimento ao CLiente TAT', function() {
         cy.get('#email').type('efra@gmail.com')
         cy.get('#open-text-area').type('Texto teste Ok')
         cy.get('button[type="submit"]').click()
-    })  
+        
+        cy.get('.success').should('be.visible')
+    })
 })

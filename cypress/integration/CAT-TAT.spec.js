@@ -100,10 +100,25 @@ describe('Central de atendimento ao CLiente TAT', function() {
     // Seção 4: Selecioando opções em campos de seleção suspensa.
 
     // Ex1:
-    it.only('seleciona um produto (YouTube) por seu texto', function(){
+    it('seleciona um produto (YouTube) por seu texto', function(){
         cy.get('#product')
         .select('YouTube')
         .should('have.value','youtube')
     })
+
+    // Ex2:
+
+    it('seleciona um produto (Mentoria por seu vlaor (value)', function(){
+        cy.get('#product')
+        .select('mentoria')
+        .should('have.value', 'mentoria')
+    })
+
+    it.only('seleciona um produto (Blog) por seu íncice', function(){
+    cy.get('#product')
+    .select(1)
+    .should('have.value','blog')
+    })
+
 
 })

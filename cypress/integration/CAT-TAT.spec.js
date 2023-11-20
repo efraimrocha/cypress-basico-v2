@@ -81,11 +81,7 @@ describe('Central de atendimento ao CLiente TAT', function() {
     })
 
     /// Ex extra 6 - 
-    // 1 - Nome do teste, exibe mensagem de erro ao submeter o formulá sem preencher os campos obrigatórios
-    // 2 - O teste deve simplesmente acessar a aplicação de clicar no botão Enviar
-    // 3 - Tal teste deve verificar que uma mesnsagem é exibida em um elemnto com a classe error
-    // 4 - Por fim, 
-
+   
     it('exibe mensagem de erro ao submeter o formulá sem preencher os campos obrigatórios', function(){
         cy.contains('button', 'Enviar').click()
 
@@ -100,8 +96,14 @@ describe('Central de atendimento ao CLiente TAT', function() {
         cy.get('.success').should('be.visible')
     })
     
-    // Ex 8 - cy.contains()
-    // Refatorando o código
+    //-------------------------------------------------------------------------
+    // Seção 4: Selecioando opções em campos de seleção suspensa.
 
+    // Ex1:
+    it.only('seleciona um produto (YouTube) por seu texto', function(){
+        cy.get('#product')
+        .select('YouTube')
+        .should('have.value','youtube')
+    })
 
 })
